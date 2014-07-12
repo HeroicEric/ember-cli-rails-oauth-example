@@ -1,15 +1,14 @@
 import Ember from 'ember';
-// import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
+import ApplicationRouteMixin from 'simple-auth/mixins/application-route-mixin';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(ApplicationRouteMixin, {
   actions: {
     authenticate: function(provider){
-      var controller = this.controller;
-
-      this.get('session').open(provider).then(function() {
-        alert('hooray it worked');
+      this.get('session').authenticate('authenticator:torii-oauth2', {
+        torii: this.get('torii'),
+        provider: provider
       }, function(error) {
-        controller.set('error', 'Could not sign you in');
+        alert('There was an error when trying to sign you in: ' + error);
       });
     }
   }
