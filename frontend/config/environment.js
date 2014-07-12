@@ -15,6 +15,15 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          scope: 'user:email'
+        }
+      }
     }
   };
 
@@ -28,6 +37,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.torii.providers['github-oauth2'].apiKey = '7ba20b9d5eb6cd9ee831';
+    ENV.torii.providers['github-oauth2'].redirectUri = 'http://localhost:4200/auth/callback';
   }
 
   if (environment === 'production') {

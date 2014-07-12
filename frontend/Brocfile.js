@@ -17,4 +17,12 @@ var app = new EmberApp();
 // please specify an object with the list of modules as keys
 // along with the exports of each module as its value.
 
+// Only necessary so we can create our own Github provider
+app.import('vendor/torii/torii.amd.js', {
+  exports: {
+    'torii/providers/oauth2-code': ['default'],
+    'torii/configuration': ['default']
+  }
+});
+
 module.exports = app.toTree();

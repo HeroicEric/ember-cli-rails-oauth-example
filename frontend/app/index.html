@@ -16,6 +16,9 @@
     <script>
       window.ExampleENV = {{ENV}};
       window.EmberENV = window.ExampleENV.EmberENV;
+
+      window.ENV = window.ENV || {};
+      window.ENV.torii = window.ExampleENV.torii;
     </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/example.js"></script>
