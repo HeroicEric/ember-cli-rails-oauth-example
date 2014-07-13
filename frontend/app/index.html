@@ -19,6 +19,9 @@
 
       window.ENV = window.ENV || {};
       window.ENV.torii = window.ExampleENV.torii;
+      window.ENV['simple-auth'] = {
+        authorizer: 'simple-auth-authorizer:oauth2-bearer'
+      }
     </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/example.js"></script>
