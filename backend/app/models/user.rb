@@ -6,6 +6,10 @@ class User < ActiveRecord::Base
   validates :uid, presence: true, uniqueness: { scope: :provider }
   validates :username, presence: true
 
+  def access_token
+    access_tokens.active.first
+  end
+
   def self.find_or_create_from_oauth(oauth)
     attributes = {
       email: oauth.email,

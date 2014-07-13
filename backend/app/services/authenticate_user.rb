@@ -13,7 +13,7 @@ class AuthenticateUser
       user_data.email = user_client.emails.find { |e| e.primary }.email
     end
 
-    @user = User.find_or_create_from_oauth(user_data)
+     self.user = User.find_or_create_from_oauth(user_data)
   end
 
   def success?

@@ -12,6 +12,17 @@ class AccessToken < ActiveRecord::Base
     seconds_remaining > 0 ? seconds_remaining : 0
   end
 
+  def self.active
+    where('expires_at >= ?', Time.zone.now)
+  end
+
+  def self.from_request(request)
+    return unless request.authorization
+
+    bearer_token = request.authorization.gsub(/\ABearer /, '')
+    find_by(access_token: bearer_token)
+  end
+
   private
   def set_access_token
     return if access_token.present?
@@ -22,6 +33,8 @@ class AccessToken < ActiveRecord::Base
   end
 
   def set_expires_at
+    return if expires_at.present?
+
     self.expires_at = Time.now + 30.days
   end
 end

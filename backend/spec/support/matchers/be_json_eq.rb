@@ -5,7 +5,7 @@ RSpec::Matchers.define :be_json_eq do |expected|
     actual.to_json == expected.to_json
   end
 
-  failure_message_for_should do |actual|
+  failure_message do |actual|
     "expected that #{actual.to_json} would eq #{expected.to_json}"
   end
 end
