@@ -6,6 +6,7 @@ describe AccessToken do
   it { should belong_to :user }
 
   it { should validate_presence_of :user }
+  it { should validate_uniqueness_of :access_token }
 
   describe ".active" do
     it "returns access tokens that have not expired" do

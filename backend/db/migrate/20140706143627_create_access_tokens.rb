@@ -9,6 +9,6 @@ class CreateAccessTokens < ActiveRecord::Migration
     end
 
     add_index :access_tokens, :user_id
-    add_index :access_tokens, :access_token
+    add_index :access_tokens, :access_token, unique: true
   end
 end

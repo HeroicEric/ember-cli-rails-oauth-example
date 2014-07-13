@@ -1,7 +1,7 @@
 class AccessToken < ActiveRecord::Base
   belongs_to :user
 
-  validates :access_token, presence: true
+  validates :access_token, presence: true, uniqueness: true
   validates :expires_at, presence: true
   validates :user, presence: true
 
