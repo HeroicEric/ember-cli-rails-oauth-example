@@ -1,0 +1,9 @@
+{
+  "firebase": "ember-cli-rails-auth",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
