@@ -1,0 +1,24 @@
+<div class="contain-to-grid">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Example</a></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        {{#if session.isAuthenticated}}
+          <li><a href="#">{{session.currentUser.username}}</a></li>
+          <li><a href="#" {{action 'invalidateSession'}}>Sign out</a></li>
+        {{else}}
+          <li>
+            <a href="#" {{action 'authenticate' 'github-oauth2'}}>
+              Sign in with GitHub
+            </a>
+          </li>
+        {{/if}}
+      </ul>
+    </section>
+  </nav>
+</div>

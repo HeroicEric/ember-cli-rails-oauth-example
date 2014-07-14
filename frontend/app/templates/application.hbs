@@ -1,10 +1,9 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+{{partial 'shared/top-bar'}}
 
-{{#if session.isAuthenticated}}
-  <button {{ action 'invalidateSession' }}>Sign out</button>
-  Signed in as {{session.currentUser.username}}
-{{else}}
-  <button {{action 'authenticate' 'github-oauth2'}}>Sign in with Github</button>
-{{/if}}
+<div class="row">
+  <div class="small-12 columns">
+    {{outlet}}
+  </div>
+</div>
 
-{{outlet}}
+{{partial 'shared/footer'}}

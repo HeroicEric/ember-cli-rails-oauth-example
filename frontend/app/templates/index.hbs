@@ -1,0 +1,22 @@
+<div class="row">
+  <div {{bind-attr class=":small-12 session.isAuthenticated:medium-6 :columns"}}>
+    <h1>This is an Example</h1>
+
+    <p>This is an example app that makes use of:</p>
+
+    <ul class="task-list">
+      <li><a href="https://github.com/stefanpenner/ember-cli">Ember CLI</a></li>
+      <li><a href="http://rubyonrails.org/">Rails 4.1</a></li>
+      <li><a href="https://github.com/simplabs/ember-simple-auth">Ember Simple Auth</a></li>
+      <li><a href="https://github.com/Vestorly/torii">Torii</a></li>
+    </ul>
+  </div>
+
+  {{#if session.isAuthenticated}}
+    <div class="small-12 medium-6 columns">
+      <div class="panel text-center">
+        <img src="/images/seinfeld-omg.gif" />
+      </div>
+    </div>
+  {{/if}}
+</div>

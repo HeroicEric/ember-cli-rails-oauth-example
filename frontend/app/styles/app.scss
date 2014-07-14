@@ -1,0 +1,24 @@
+@import "vendor/foundation/scss/normalize.scss";
+@import "foundation-overrides.scss";
+@import "vendor/foundation/scss/foundation.scss";
+
+.fa-2 { font-size: 2em; }
+
+#footer {
+  width: 100%;
+  padding: 25px 0;
+  border-top: 1px solid #dfd7d4;
+  color: #bbbbbb;
+
+  a { color: #464646; }
+}
+
+.created-by {
+  display: block;
+  padding-top: 8px;
+
+  @media #{$small-only} {
+    margin-bottom: 1em;
+    text-align: center;
+  }
+}
