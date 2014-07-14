@@ -13,7 +13,6 @@ gem 'jquery-rails'
 gem 'spring', group: :development
 
 gem 'active_model_serializers'
-gem 'dotenv-rails'
 gem 'octokit'
 
 group :production do
@@ -27,6 +26,7 @@ group :test do
 end
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
 end
