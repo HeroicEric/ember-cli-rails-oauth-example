@@ -13,6 +13,7 @@ gem 'spring', group: :development
 
 gem 'active_model_serializers'
 gem 'octokit'
+gem 'rack-cors', require: 'rack/cors'
 
 group :production do
   gem 'rails_12factor'

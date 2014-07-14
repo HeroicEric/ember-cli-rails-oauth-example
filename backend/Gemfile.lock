@@ -88,6 +88,7 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.5.2)
+    rack-cors (0.2.9)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.2)
@@ -189,6 +190,7 @@ DEPENDENCIES
   octokit
   pg
   pry-rails
+  rack-cors
   rails (= 4.1.2)
   rails_12factor
   rspec-rails (~> 3.0.0)
