@@ -12,7 +12,7 @@ export default {
         if (!Ember.isEmpty(userId)) {
           return container.lookup('store:main').find('user', userId);
         }
-      }.property()
+      }.property('user_id')
     });
 
     container.register('authenticator:torii-oauth2', ToriiOauth2Authenticator);
