@@ -5,6 +5,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('authCallback', { path: '/auth/callback' });
 });
 
 export default Router;

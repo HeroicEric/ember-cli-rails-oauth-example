@@ -2,8 +2,6 @@ import Ember from 'ember';
 import OAuth2 from 'simple-auth-oauth2/authenticators/oauth2';
 
 export default OAuth2.extend({
-  serverTokenEndpoint: '/api/v1/token',
-
   authenticate: function(options) {
     return this.fetchOauthData(options).then(this.fetchAccessToken.bind(this));
   },
