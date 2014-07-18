@@ -1,4 +1,4 @@
-# Ember CLI && Torii && Ember Simple Auth && Rails
+# Ember CLI && Rails && OAuth
 
 This example app allows users authenticate using their GitHub
 account. Their GitHub information is used to create an account on the Rails
