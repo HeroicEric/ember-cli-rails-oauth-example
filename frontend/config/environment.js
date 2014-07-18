@@ -18,6 +18,14 @@ module.exports = function(environment) {
     }
   };
 
+  ENV.torii = {
+    providers: {
+      'github-oauth2': {
+        scope: 'user:email'
+      }
+    }
+  };
+
   if (environment === 'development') {
     // LOG_MODULE_RESOLVER is needed for pre-1.6.0
     ENV.LOG_MODULE_RESOLVER = true;
@@ -29,31 +37,13 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
 
-    ENV.host = 'http://localhost:4200';
-
-    ENV.torii = {
-      providers: {
-        'github-oauth2': {
-          scope: 'user:email',
-          apiKey: '7ba20b9d5eb6cd9ee831',
-          redirectUri: ENV.host + '/#/auth/callback'
-        }
-      }
-    };
+    ENV.host = 'http://localhost:3000';
+    ENV.torii.providers['github-oauth2'].apiKey = '7ba20b9d5eb6cd9ee831';
   }
 
   if (environment === 'production') {
     ENV.host = 'http://ember-cli-rails-oauth-example.herokuapp.com';
-
-    ENV.torii = {
-      providers: {
-        'github-oauth2': {
-          scope: 'user:email',
-          apiKey: '148a27a37233a18bf596',
-          redirectUri: ENV.host + '/#/auth/callback'
-        }
-      }
-    };
+    ENV.torii.providers['github-oauth2'].apiKey = '148a27a37233a18bf596';
   }
 
   ENV['simple-auth'] = {

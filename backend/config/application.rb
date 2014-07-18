@@ -29,7 +29,11 @@ module Example
 
     config.middleware.insert_before ActionDispatch::Static, Rack::Cors do
       allow do
-        origins 'https://ember-cli-rails-auth.firebaseapp.com'
+        if Rails.env.production?
+          origins 'https://ember-cli-rails-auth.firebaseapp.com'
+        else
+          origins 'http://localhost:4200'
+        end
 
         resource '*',
           headers: :any,
