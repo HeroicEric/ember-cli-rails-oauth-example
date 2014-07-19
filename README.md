@@ -42,6 +42,10 @@ There's a demo of this app running at
 3. Copy `backend/.env.sample` to `backend/.env` and add your GitHub credentials.
 4. Start both apps with `rake run`.
 
+## Contributing
+
+Please do!
+
 [1]: https://github.com/stefanpenner/ember-cli  "Ember CLI"
 [2]: http://rubyonrails.org/  "Ruby on Rails"
 [3]: https://github.com/simplabs/ember-simple-auth  "Ember Simple Auth"
